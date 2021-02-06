@@ -1,0 +1,29 @@
+String s = "";
+trong C# thì viết
+string s = "" là đủ, viết thường thôi cho nó tiện
+
+class DFS
+hàm startDFS chưa đạt yêu cầu
+em thử gọi hàm startDFS nhiều lần coi có ra kết quả ko?
+chắc chắn là ko
+hàm của em chỉ có kết quả trong lần gọi đầu tiên, vậy là kém
+hàm timDuongDi cũng tương tự
+gọi timDuongDi nhiều lần sẽ ko ra được kết quả
+ví dụ ban đầu anh muốn tìm đường đi từ đỉnh 0 đến đỉnh 4
+suy ra anh sẽ gọi
+dfs.findPath(0, 4);
+VÀ LÚC SAU
+anh muốn tìm đường đi từ đỉnh 5 đến đỉnh 3, suy ra sẽ gọi
+dfs.findPath(5, 3)
+và dĩ nhiên, lần này sẽ ko ra được kết quả gì, kể cả khi thật sự tồn tại đường đi từ đinh 5 đến đỉnh 3
+hàm  private void dfs(int startVertex) và hàm private void timDuongDi(int startVertex)
+đặt tên tham số kém tên tham số trùng với tên biến trong class đặt tên là u là đủ rồi
+
+tình trạng tương tự xảy ra trong class BFS, em tự sửa lại
+mà hình như BFS ko bị lỗi thế mới hay
+hàm startBFS thì ko bị lỗi mà hàm findPath thì bị lỗi
+nói chung, em tự sửa
+đặt tên biến "mang": ko mô tả rõ và chính xác ý nghĩa, ko chấp nhận
+nhắc lại một lần cuối tên biến phải rõ ràng, mô tả đúng ý nghĩa của nó
+trong bối cảnh BFS, em sửa tên "mang" thành "trace"
+trace nghĩa là truy vết
