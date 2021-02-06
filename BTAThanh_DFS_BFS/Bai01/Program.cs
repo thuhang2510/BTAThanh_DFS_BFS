@@ -41,6 +41,7 @@ namespace Bai01
 
             Console.WriteLine("Tim duong di BFS");
             ketqua = bfs.findPath(3, 2);
+            ketqua.Reverse();
 
             if (ketqua.Count > 1)
                 Console.WriteLine(string.Join(" --> ", ketqua));

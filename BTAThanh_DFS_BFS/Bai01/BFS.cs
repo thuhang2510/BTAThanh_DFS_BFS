@@ -71,7 +71,8 @@ class BFS
 
         while (trace[endVertex] != -1)
         {
-            path.Insert(0, trace[endVertex]);
+            //path.Insert(0, trace[endVertex]);
+            path.Add(trace[endVertex]);
             endVertex = trace[endVertex];
         }
 
