@@ -30,7 +30,6 @@ namespace Bai01
             Console.WriteLine();
 
             Console.WriteLine("Tim duong di DFS");
-            dfs = new DFS(g);
             List<int> ketqua = dfs.findPath(3, 2);
 
             if (ketqua != null)
@@ -41,7 +40,6 @@ namespace Bai01
             Console.WriteLine();
 
             Console.WriteLine("Tim duong di BFS");
-            bfs = new BFS(g);
             ketqua = bfs.findPath(3, 2);
 
             if (ketqua.Count > 1)
