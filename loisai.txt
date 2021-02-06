@@ -18,6 +18,7 @@ dfs.findPath(5, 3)
 và dĩ nhiên, lần này sẽ ko ra được kết quả gì, kể cả khi thật sự tồn tại đường đi từ đinh 5 đến đỉnh 3
 hàm  private void dfs(int startVertex) và hàm private void timDuongDi(int startVertex)
 đặt tên tham số kém tên tham số trùng với tên biến trong class đặt tên là u là đủ rồi
+tên biến "flag" trong class DFS là quá chung chung => không chấp nhận
 
 tình trạng tương tự xảy ra trong class BFS, em tự sửa lại
 mà hình như BFS ko bị lỗi thế mới hay
