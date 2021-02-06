@@ -32,3 +32,8 @@ class DFS thì chấp nhận vì visited phục vụ đệ quy nên phải để
 còn BFS em có đệ quy đâu mà để toàn cục?
 trong bối cảnh BFS, em sửa tên "mang" thành "trace"
 trace nghĩa là truy vết
+
+trong hàm findPath của BFS, vòng lặp while
+thêm liên tục vào mảng tại vị trí 0 là kém
+xét về cấu trúc dữ liệu, đây là thao tác tiêu tốn CPU
+cho nên ko chấp nhận
