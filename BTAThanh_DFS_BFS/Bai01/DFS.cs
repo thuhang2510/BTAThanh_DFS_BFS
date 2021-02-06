@@ -10,22 +10,23 @@ class DFS
 
     public DFS(Graph g)
     {
-        visited = Enumerable.Repeat(false, g.n).ToArray();
+        visited = new bool[g.n];
         this.g = g;
     }
 
-    public void startDFS(int startVertex)
+    public void startDFS(int u)
     {
-        dfs(startVertex);
+        visited = new bool[g.n];
+        dfs(u);
     }
 
-    private void dfs(int startVertex)
+    private void dfs(int u)
     {
-        visited[startVertex] = true;
-        Console.WriteLine(startVertex);
+        visited[u] = true;
+        Console.WriteLine(u);
 
         for (int v = 0; v < g.n; ++v)
-            if (g[startVertex, v] > 0 && visited[v] == false)
+            if (g[u, v] > 0 && visited[v] == false)
             {
                 dfs(v);
             }
@@ -33,14 +34,14 @@ class DFS
 
     private List<int> duongDi = new List<int>();
     private List<int> ketqua;
-    private bool flag = false;
+    private bool flag;
 
-    private void timDuongDi(int startVertex)
+    private void timDuongDi(int uBD)//tên tham số không được trùng tên với biến trong class
     {
-        duongDi.Add(startVertex);
-        visited[startVertex] = true;
+        duongDi.Add(uBD);
+        visited[uBD] = true;
 
-        if (startVertex == endVertex)
+        if (uBD == endVertex)
         {
             flag = true;
             ketqua = new List<int>(duongDi);
@@ -49,19 +50,21 @@ class DFS
         {
             for (int v = 0; v < g.n; ++v)
             {
-                if (g[startVertex, v] > 0 && visited[v] == false && flag == false)
+                if (g[uBD, v] > 0 && visited[v] == false && flag == false)
                     timDuongDi(v);
             }
         }
 
-        visited[startVertex] = false;
+        visited[uBD] = false;
         duongDi.RemoveAt(duongDi.Count - 1);
     }
 
-    public List<int> findPath(int startVertex, int endVertex)
+    public List<int> findPath(int uBD, int uKT)
     {
-        this.startVertex = startVertex;
-        this.endVertex = endVertex;
+        visited = new bool[g.n];
+        flag = false;
+        startVertex = uBD;
+        endVertex = uKT;
 
         timDuongDi(startVertex);
 
