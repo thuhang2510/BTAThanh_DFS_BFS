@@ -34,7 +34,7 @@ class DFS
 
     private List<int> duongDi = new List<int>();
     private List<int> ketqua;
-    private bool flag;
+    private bool ktraDuongDi;
 
     private void timDuongDi(int uBD)//tên tham số không được trùng tên với biến trong class
     {
@@ -43,14 +43,14 @@ class DFS
 
         if (uBD == endVertex)
         {
-            flag = true;
+            ktraDuongDi = true;
             ketqua = new List<int>(duongDi);
         }
         else
         {
             for (int v = 0; v < g.n; ++v)
             {
-                if (g[uBD, v] > 0 && visited[v] == false && flag == false)
+                if (g[uBD, v] > 0 && visited[v] == false && ktraDuongDi == false)
                     timDuongDi(v);
             }
         }
@@ -62,7 +62,7 @@ class DFS
     public List<int> findPath(int uBD, int uKT)
     {
         visited = new bool[g.n];
-        flag = false;
+        ktraDuongDi = false;
         startVertex = uBD;
         endVertex = uKT;
 

@@ -25,5 +25,10 @@ hàm startBFS thì ko bị lỗi mà hàm findPath thì bị lỗi
 nói chung, em tự sửa
 đặt tên biến "mang": ko mô tả rõ và chính xác ý nghĩa, ko chấp nhận
 nhắc lại một lần cuối tên biến phải rõ ràng, mô tả đúng ý nghĩa của nó
+trong bối cảnh này, class BFS ko có bất cứ lý do nào để lưu mảng visited
+DFS lưu visitied là phục vụ đệ quy còn BFS chả có ý nghĩa gì cả
+nhưng em đẻ visited là một thuộc tính trong class BFS là ko chấp nhận
+class DFS thì chấp nhận vì visited phục vụ đệ quy nên phải để toàn cục
+còn BFS em có đệ quy đâu mà để toàn cục?
 trong bối cảnh BFS, em sửa tên "mang" thành "trace"
 trace nghĩa là truy vết

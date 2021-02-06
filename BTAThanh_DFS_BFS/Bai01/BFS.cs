@@ -5,19 +5,17 @@ using System.Linq;
 class BFS
 {
     private Graph g;
-    private bool[] visited;
     private int[] trace;
 
     public BFS(Graph g)
     {
-        visited = new bool[g.n];
         trace = Enumerable.Repeat(-1, g.n).ToArray();
         this.g = g;
     }
 
     public void startBFS(int startVertex)
     {
-        visited = new bool[g.n];
+        bool[] visited = new bool[g.n]; //phải để cục bộ
         Queue<int> queue = new Queue<int>();
 
         queue.Enqueue(startVertex);
@@ -40,6 +38,7 @@ class BFS
     private void timDuongDi(int uBD, int uKT)
     {
         Queue<int> queue = new Queue<int>();
+        bool[] visited = new bool[g.n];
 
         queue.Enqueue(uBD);
         visited[uBD] = true;
@@ -63,7 +62,6 @@ class BFS
 
     public List<int> findPath(int startVertex, int endVertex)
     {
-        visited = new bool[g.n];
         trace = Enumerable.Repeat(-1, g.n).ToArray();
 
         timDuongDi(startVertex, endVertex);
