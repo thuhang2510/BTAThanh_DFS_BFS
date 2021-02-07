@@ -38,3 +38,18 @@ trong hàm findPath của BFS, vòng lặp while
 thêm liên tục vào mảng tại vị trí 0 là kém
 xét về cấu trúc dữ liệu, đây là thao tác tiêu tốn CPU
 cho nên ko chấp nhận
+
+hàm findPath code chưa tốt
+vì biến endVertex là input
+các biến input tuyệt đối ko thay đổi giá trị, muốn xử lý thì tạo thêm biến phụ
+hàm findPath vi phạm quy tắc thiết kế hàm
+vì hàm này trả về đường đi đảo ngược, nó chưa làm tròn nhiệm vụ
+công việc đảo ngược kết quả lại nằm ở hàm main, vậy là kém
+nhắc lại về quy tắc thiết kế hàm: HÀM PHẢI LÀM TRÒN NHIỆM VỤ CỦA NÓ, KHÔNG THIẾU, KHÔNG DƯ THỪA
+ngoài ra, trong vòng lặp while trong hàm findPath, code kém
+cần suy nghĩ về 2 câu lệnh
+ path.Add(trace[endVertex]);
+            endVertex = trace[endVertex];
+suy nghĩ xem code vậy là có tốt hay chưa
+ngoài ra, khi không tồn tại đường đi thì đáng lẽ path không có phần tử nào
+trong khi đó code của em thì path lại có 1 phần tử, vậy là sai

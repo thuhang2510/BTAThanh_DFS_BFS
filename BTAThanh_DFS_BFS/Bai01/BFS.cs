@@ -60,21 +60,28 @@ class BFS
         }
     }
 
-    public List<int> findPath(int startVertex, int endVertex)
+    //findPath phải trả về đường đi không bị đảo ngược
+    public List<int> findPath(int startVertex, int endVertex)//các input tuyệt đối không thay đổi giá trị
     {
         trace = Enumerable.Repeat(-1, g.n).ToArray();
 
         timDuongDi(startVertex, endVertex);
 
         List<int> path = new List<int>();
-        path.Add(endVertex);
+        int u = endVertex;
 
-        while (trace[endVertex] != -1)
+        if (trace[u] == -1)
+            return path;
+
+        path.Add(u);
+
+        while (trace[u] != -1)
         {
-            //path.Insert(0, trace[endVertex]);
-            path.Add(trace[endVertex]);
-            endVertex = trace[endVertex];
+            path.Add(trace[u]);
+            u = trace[u];
         }
+
+        path.Reverse();
 
         return path;
     }
